@@ -107,6 +107,45 @@
           </pre>
         </div>
         </div>
+        <div class="usermedia-section mdl-typography--text-center mdl-grid">
+        <div class="mdl-cell mdl-cell--6-col">
+          <div class="logo-font android-slogan"><h3>getUserMedia API</h3></div>
+          <p>Supported only from mobile - non standard API</p>
+            <video id="video"></video>
+            <br>
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect accent-color" onclick="getMedia()">
+              Get Media from webcam
+            </button>
+
+<!--           <a href="#screens">
+            <button class="android-fab mdl-button mdl-button--colored mdl-js-button mdl-button--fab mdl-js-ripple-effect">
+              <i class="material-icons">expand_more</i>
+            </button>
+          </a> -->
+        </div>
+        <div class="mdl-cell mdl-cell--6-col code">
+        <h5>Code for this: </h5>
+          <pre><code data-language="javascript" class="codice">
+            if (navigator.getUserMedia) {
+               navigator.getUserMedia({ audio: true, video: { width: 1280, height: 720 } },
+                  function(stream) {
+                     var video = document.querySelector('video');
+                     video.src = window.URL.createObjectURL(stream);
+                     video.onloadedmetadata = function(e) {
+                       video.play();
+                     };
+                  },
+                  function(err) {
+                     alert("The following error occurred: " + err.name);
+                  }
+               );
+            } else {
+               alert("getUserMedia not supported");
+            }
+          </code>
+          </pre>
+        </div>
+        </div>
         <div class="android-screen-section mdl-typography--text-center">
           <a name="screens"></a>
           <div class="mdl-typography--display-1-color-contrast">Powering screens of all sizes</div>

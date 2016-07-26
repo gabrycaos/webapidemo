@@ -180,6 +180,15 @@ a img{
   /*background: url('images/geolocation.png') center 30% no-repeat;*/
   background-size: contain;
 }
+.usermedia-section {
+  position: relative;
+  height: 800px;
+  width: auto;
+  /*background-color: #f3f3f3;*/
+  background-color: #FFCCBC;
+  /*background: url('images/geolocation.png') center 30% no-repeat;*/
+  background-size: contain;
+}
 
 .logo-font {
   font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
