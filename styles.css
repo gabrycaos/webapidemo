@@ -175,7 +175,8 @@ a img{
   position: relative;
   height: 800px;
   width: auto;
-  background-color: #f3f3f3;
+  /*background-color: #f3f3f3;*/
+  background-color: #D5EBF2;
   /*background: url('images/geolocation.png') center 30% no-repeat;*/
   background-size: contain;
 }
@@ -561,9 +562,9 @@ a img{
   height: 300px;
   text-align: left;
 }
-.code > blockquote {
-  background-color: #FFFFFF;
+.code > pre {
+  background-color: #333333;
   padding-left: 15px;
-  border-left: 5px solid #00AACC;
+  border-left: 5px solid #FF4E00;
   quotes: none;
 }
