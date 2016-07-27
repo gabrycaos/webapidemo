@@ -171,7 +171,7 @@ a img{
       bottom: 16px;
     }
 
-.geolocation-section {
+.blue-section {
   position: relative;
   height: 800px;
   width: auto;
@@ -180,7 +180,7 @@ a img{
   /*background: url('images/geolocation.png') center 30% no-repeat;*/
   background-size: contain;
 }
-.usermedia-section {
+.orange-section {
   position: relative;
   height: 800px;
   width: auto;
@@ -188,6 +188,11 @@ a img{
   background-color: #FFCCBC;
   /*background: url('images/geolocation.png') center 30% no-repeat;*/
   background-size: contain;
+}
+
+
+.imagedemo{
+  width: 40%;
 }
 
 .logo-font {
@@ -447,8 +452,12 @@ a img{
   position: relative;
 }
 
+  .android-footer a{
+    color: #FF4E00;
+  }
+
   .android-footer a:hover {
-    color: #8bc34a;
+    color: #00AACC;
   }
 
   .android-footer .mdl-mega-footer--top-section::after {
@@ -571,9 +580,14 @@ a img{
   height: 300px;
   text-align: left;
 }
-.code > pre {
+
+.blue-section > .code > pre {
   background-color: #333333;
   padding-left: 15px;
   border-left: 5px solid #FF4E00;
-  quotes: none;
+}
+.orange-section > .code > pre {
+  background-color: #333333;
+  padding-left: 15px;
+  border-left: 5px solid #00AACC;
 }

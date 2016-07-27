@@ -30,3 +30,11 @@ function getMedia(){
 	   alert("getUserMedia not supported");
 	}
 }
+
+function fullscreenPika(){
+
+	var pikachu = document.querySelector("#pikachu");
+	if (pikachu.requestFullscreen) {
+	  pikachu.requestFullscreen();
+	}
+}
