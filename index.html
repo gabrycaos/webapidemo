@@ -54,6 +54,8 @@
         <div class="blue-section mdl-typography--text-center mdl-grid">
         <div class="mdl-cell mdl-cell--6-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">
           <div class="logo-font android-slogan"><h3>Geolocation API</h3></div>
+          <br>
+          <p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/Using_geolocation" target="_blank">More information</a></p>
           <div class="logo-font android-sub-slogan"><h5>Latitude: <span id="lat"></span></h5></div>
           <div class="logo-font android-sub-slogan"><h5>Longitude: <span id="lon"></span></h5></div>
           <div class="logo-font android-sub-slogan"><h5>Accuracy: <span id="acc"></span> m</h5></div>
@@ -90,7 +92,8 @@
         <div class="mdl-cell mdl-cell--6-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">
           <div class="logo-font android-slogan"><h3>getUserMedia API</h3></div>
           <p>Supported only from mobile - non standard API</p>
-            <video id="video"></video>
+          <p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator/getUserMedia" target="_blank">More information</a></p>
+          <video id="video"></video>
             <br>
             <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect accent-color" onclick="getMedia()">
               Get Media from webcam
@@ -129,6 +132,8 @@
         <div class="blue-section mdl-typography--text-center mdl-grid">
           <div class="mdl-cell mdl-cell--6-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">
             <div class="logo-font android-slogan"><h3>Fullscreen API</h3></div>
+            <br>
+            <p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Fullscreen_API" target="_blank">More information</a></p>
             <img src="images/pikachu.png" class="imagedemo" id="pikachu">
               <br>
               <br>
@@ -156,21 +161,55 @@
           </div>
         </div>
 
+        <div class="orange-section mdl-typography--text-center mdl-grid">
+          <div class="mdl-cell mdl-cell--6-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+            <div class="logo-font android-slogan"><h3>Web Speech API</h3></div>
+            <p>Speech synthesis</p>
+            <p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API/Using_the_Web_Speech_API" target="_blank">More information</a></p>
+            <br>
+            <input type="text" id="phrase" placeholder="write a text here and press button"/>
+            <br>
+            <br>
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect accent-color" onclick="speech()">
+              Okay website, speech!
+            </button>
+
+            <!--           <a href="#screens">
+                        <button class="android-fab mdl-button mdl-button--colored mdl-js-button mdl-button--fab mdl-js-ripple-effect">
+                          <i class="material-icons">expand_more</i>
+                        </button>
+                      </a> -->
+          </div>
+          <div class="mdl-cell mdl-cell--6-col mdl-cell--12-col-tablet mdl-cell--12-col-phone code">
+            <h5>Code for this: </h5>
+            <pre>
+              <code data-language="javascript" class="codice">
+                  var phrase = document.getElementById("phrase").value;
+                  var speech = new SpeechSynthesisUtterance(phrase);
+                  window.speechSynthesis.speak(speech);
+              </code>
+            </pre>
+          </div>
+        </div>
+
+
         <footer class="android-footer mdl-mega-footer">
           <div class="mdl-mega-footer--top-section">
             <div class="mdl-mega-footer--left-section">
-              
+
+            </div>
+
+            <div class="mdl-mega-footer--middle-section">
+              <p class="mdl-typography--font-light">Powered by Gabriele Falasca - <a href="https://github.com/gabrycaos" target="_blank">gabrycaos</a></p>
+              <p class="mdl-typography--font-light">Original Template: androiddotcom by <a href="https://getmdl.io" target="_blank">getmdl.io</a></p>
+              <p class="mdl-typography--font-light">Template license: <a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache v2.0</a></p>
+              <p class="mdl-typography--font-light">Website license: <a href="https://www.gnu.org/licenses/gpl-3.0.html" target="_blank">GPL v3.0</a></p>
+            </div>
+
+            <div class="mdl-mega-footer--bottom-section">
+
+            </div>
           </div>
-
-          <div class="mdl-mega-footer--middle-section">
-            <p class="mdl-typography--font-light">Powered by Gabriele Falasca - <a href="https://github.com/gabrycaos" target="_blank">gabrycaos</a></p>
-            <p class="mdl-typography--font-light">Original Template: androiddotcom by <a href="https://getmdl.io" target="_blank">getmdl.io</a></p>
-          </div>
-
-          <div class="mdl-mega-footer--bottom-section">
-
-          </div>
-
         </footer>
       </div>
     </div>

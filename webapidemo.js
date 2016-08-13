@@ -38,3 +38,9 @@ function fullscreenPika(){
 	  pikachu.requestFullscreen();
 	}
 }
+
+function speech(){
+	var phrase = document.getElementById("phrase").value;
+	var speech = new SpeechSynthesisUtterance(phrase);
+	window.speechSynthesis.speak(speech);
+}
