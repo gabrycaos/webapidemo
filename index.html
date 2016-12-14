@@ -200,7 +200,7 @@
         <div class="blue-section mdl-typography--text-center mdl-grid">
           <div class="mdl-cell mdl-cell--6-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">
             <div class="logo-font android-slogan"><h3>Web Speech API</h3></div>
-            <p>Speech synthesis</p>
+            <p>Text-to-speech</p>
             <p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API/Using_the_Web_Speech_API" target="_blank">More information</a></p>
             <br>
             <input type="text" id="phrase" placeholder="write a text here and press button"/>
@@ -223,6 +223,96 @@
                   var phrase = document.getElementById("phrase").value;
                   var speech = new SpeechSynthesisUtterance(phrase);
                   window.speechSynthesis.speak(speech);
+              </code>
+            </pre>
+          </div>
+        </div>
+
+        <div class="orange-section mdl-typography--text-center mdl-grid">
+          <div class="mdl-cell mdl-cell--6-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+            <div class="logo-font android-slogan"><h3>Web Speech API</h3></div>
+            <p>Speech-to-text</p>
+            <p><a href="https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition" target="_blank">More information</a></p>
+            <br>
+              <p id="speeched"></p>
+            <br>
+            <br>
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect accent-color" onclick="speechRecognition()">
+              Okay website, listen to me!
+            </button>
+
+            <!--           <a href="#screens">
+                        <button class="android-fab mdl-button mdl-button--colored mdl-js-button mdl-button--fab mdl-js-ripple-effect">
+                          <i class="material-icons">expand_more</i>
+                        </button>
+                      </a> -->
+          </div>
+          <div class="mdl-cell mdl-cell--6-col mdl-cell--12-col-tablet mdl-cell--12-col-phone code">
+            <h5>Code for this: </h5>
+            <pre>
+              <code data-language="javascript" class="codice">
+                  var recognition = new SpeechRecognition();
+                  recognition.lang = 'en-US';
+                  recognition.interimResults = false;
+
+                  recognition.start();
+                  console.log('Ready to receive a color command.');
+
+                  recognition.onresult = function (event) {
+                      var text = event.results[0][0].transcript;
+                      $("#speeched").append(text);
+                  }
+              </code>
+            </pre>
+          </div>
+        </div>
+
+        <div class="blue-section mdl-typography--text-center mdl-grid">
+          <div class="mdl-cell mdl-cell--6-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+            <div class="logo-font android-slogan"><h3>Workers</h3></div>
+            <p>Speech-to-text</p>
+            <p><a href="https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition" target="_blank">More information</a></p>
+            <br>
+            <input type="text" id="dataForWorker" placeholder="write a text here"/>
+            <br>
+            <br>
+            <p id="result"></p>
+            <br>
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect accent-color" onclick="getFromWorker()">
+              Send data to worker!
+            </button>
+
+            <!--           <a href="#screens">
+                        <button class="android-fab mdl-button mdl-button--colored mdl-js-button mdl-button--fab mdl-js-ripple-effect">
+                          <i class="material-icons">expand_more</i>
+                        </button>
+                      </a> -->
+          </div>
+          <div class="mdl-cell mdl-cell--6-col mdl-cell--12-col-tablet mdl-cell--12-col-phone code">
+            <h5>Code for this: </h5>
+            <pre>
+              <code data-language="javascript" class="codice">
+
+                //main script
+                    var myWorker = new Worker("worker.js");
+                      console.log($("#dataForWorker").val());
+                      myWorker.postMessage([$("#dataForWorker").val()]);
+                      console.log('Message posted to worker');
+
+                      myWorker.onmessage = function(result){
+                          console.log(result);
+                          $("#result").append(result.data)
+                      };
+
+                //worker.js
+                  onmessage = function(e) {
+                      console.log('Message received from main script');
+                      var workerResult = "Hi, i am the worker, you have just sent me this data: "+e.data[0];
+                      console.log('Posting message back to main script');
+                      postMessage(workerResult);
+
+                  };
+
               </code>
             </pre>
           </div>
