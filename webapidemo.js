@@ -91,7 +91,8 @@ function getFromWorker(e){
 
     myWorker.onmessage = function(result){
         console.log(result);
-        $("#result").append(result.data)
+        $("#result").empty();
+        $("#result").append(result.data);
     };
 //--------------
 
