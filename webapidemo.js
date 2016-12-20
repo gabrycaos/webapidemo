@@ -77,6 +77,7 @@ function speechRecognition() {
     //     // alert(color);
     //     $("#speeched").append(color);
     // }
+    $("#speeched").empty();
     $("#speeched").append("API currently not supported :(");
 
 }
